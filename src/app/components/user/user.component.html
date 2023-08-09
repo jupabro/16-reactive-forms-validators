@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>User Registration</h1>
+
+    <div>
+        <label>
+            Username:
+            <input type="text" [formControl]="username">
+        </label>
+        <label>
+            Email:
+            <input type="email" [formControl]="email">
+        </label>
+        <label>
+            Password:
+            <input type="password" [formControl]="password">
+        </label>
+        <div class="label-group-title">Adress:</div>
+        <div class="label-group">
+            <label>
+                Street:
+                <input type="text" [formControl]="street">
+            </label>
+            <label>
+                Postal Code:
+                <input type="text" [formControl]="postalCode">
+            </label>
+            <label>
+                City:
+                <input type="text" [formControl]="city">
+            </label>
+        </div>
+    </div>
+
+    <button (click)="register()">Register</button>
+
+    <div *ngIf="registered" class="confirmation">
+        <h2>Registration Successful!</h2>
+        <div class="user-details">
+            <div class="detail">
+                <span>Username:</span>
+                {{ username.value }}
+            </div>
+            <div class="detail">
+                <span>Email:</span>
+                {{ email.value }}
+            </div>
+            <div class="detail">
+                <span>Password:</span>
+                {{ password.value }}
+            </div>
+            <div class="address">
+                <span>Address:</span>
+                <div class="address-info">{{ street.value }}</div>
+                <div class="address-info">{{ postalCode.value }}</div>
+                <div class="address-info">{{ city.value }}</div>
+            </div>
+        </div>
+    </div>
+</div>
